@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         version="2.5">
+    
+    <display-name>FB Connect</display-name>
+    
+    <filter>
+        <filter-name>authFilter</filter-name>
+        <filter-class>org.zjor.example.filter.AuthFilter</filter-class>
+    </filter>
+    
+    <filter-mapping>
+        <filter-name>authFilter</filter-name>
+        <url-pattern>/secure/*</url-pattern>
+    </filter-mapping>
+
+    <servlet>
+        <servlet-name>authServlet</servlet-name>
+        <servlet-class>org.zjor.example.servlet.AuthServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>authServlet</servlet-name>
+        <url-pattern>/authenticate</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>logoutServlet</servlet-name>
+        <servlet-class>org.zjor.example.servlet.LogoutServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>logoutServlet</servlet-name>
+        <url-pattern>/secure/logout</url-pattern>
+    </servlet-mapping>
+
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+</web-app>

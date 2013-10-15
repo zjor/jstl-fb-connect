@@ -1,0 +1,18 @@
+<taglib>
+    <tlib-version>1.0</tlib-version>
+    <jsp-version>2.0</jsp-version>
+    <short-name>FB Connect</short-name>
+
+    <tag>
+        <name>userName</name>
+        <tag-class>org.zjor.example.taglib.UserNameTag</tag-class>
+        <body-content>empty</body-content>
+    </tag>
+
+    <tag>
+        <name>avatar</name>
+        <tag-class>org.zjor.example.taglib.AvatarTag</tag-class>
+        <body-content>empty</body-content>
+    </tag>
+
+</taglib>
